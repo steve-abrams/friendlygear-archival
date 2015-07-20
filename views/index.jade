@@ -3,3 +3,8 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
+  form(method='get' action='/auth/facebook')
+    input(type='submit' value='login with facebook')
+  form(method='get' action='/logout')
+    input(type='submit' value='logout')
+  a(href='/users/show') Secret Page

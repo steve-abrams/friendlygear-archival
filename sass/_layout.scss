@@ -1,0 +1,39 @@
+.main {
+  margin: 0 auto;
+  width: 65%;
+  min-width: 400px;
+}
+p {
+  text-align: justify;
+}
+.banner {
+  display: block;
+  border-top: 2em solid $blue;
+  border-bottom: 2em solid $green;
+  width: 100%;
+  text-align: center;
+  padding-top: 20px;
+  background-color: $red;
+  h1, h2, h3, h4, h5, h6 {
+    color: $offwhite;
+  }
+}
+.row {
+  width: 100%;
+}
+.col6 {
+  display: inline-block;
+  width: 48%;
+  vertical-align: top;
+}
+.col6:first-of-type {
+  margin-right: 20px;
+}
+.footer {
+  margin-top: 20px;
+  border-top: 1px solid $offwhite;
+  padding: 20px;
+  width: 100%;
+  margin-bottom: 20px;
+  text-align: center;
+}
