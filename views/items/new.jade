@@ -1,0 +1,41 @@
+extends ./../layout
+//- name: String,
+//- description: String,
+//- brand: String,
+//- purchaseDate: Date,
+//- condition: String,
+//- categories: [{category: String}],
+//- availability: [{startDate: Date, endDate: Date}]
+block content
+  h1 List New Gear
+  form(method='post' action='/items')
+    .row
+      label.col2(for='name') What is it?
+      input#name.col6(type='text' name='name')
+    .row
+      label.col2(for='brand') Brand/Manufacturer
+      input#brand.col6(type='text' name='brand')
+    .row
+      label.col2(for='datePurchased') Date purchased 
+      input#datePurchased.col6(type='date' name='purchaseDate')
+    .row
+      label.col2(for='condition') Condition
+      select#condition.col6(name='condition')
+        option(value='new') New (Seriously never been used)
+        option(value='likenew') Like New (Light use with no noticable wear)
+        option(value='good') Good (Light wear, no major flaws. Most well kept lightly used gear)
+        option(value='worn') Worn (Used often and used well. Probably some wear and tear that would be expected based on it's age and use)
+        option(value='damaged') Some Damage (Some flaws that may affect usability, like rips in a tent, or broken zipper on a sleeping bag)
+        option(value='old') Near retirement (older gear that has been well loved and used and can still be used, but might only make it a few more trips)
+        option(value='oldnew') Old gear that just never got used much
+    .row
+      label.col2(for='category') Categories (comma separated)
+      input#category.col6(type='text' name='category')
+    .row
+      label.col2(for='availability') Availability
+      label.col2(for='startDate')
+      input#startDate(name='startDate' type='date')
+      label.col2(for='endDate')
+      input#endDate(name='endDate' type='date')
+    .row
+      input(type='submit' value='Submit')
