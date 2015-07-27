@@ -1,0 +1,26 @@
+extends ./../layout
+
+block content
+  h1 Your Gear
+  table
+    thead
+      tr
+        th Name
+        th Brand
+        th Condition
+        th purchaseDate
+        th Available Now?
+        th Options
+    tbody
+      each item in items
+        tr
+          td item.name
+          td item.brand
+          td item.condition
+          td item.purchaseDate
+          td item.startDate
+          td 
+            a(href='/items/#{item._id}/edit') Edit
+            a(href='/items/#{item._id}') Show
+            form(action='/items/#{item._id}/delete' method='post') Delete
+            

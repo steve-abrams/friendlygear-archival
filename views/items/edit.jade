@@ -1,0 +1,41 @@
+extends ./../layout
+//- name: String,
+//- description: String,
+//- brand: String,
+//- purchaseDate: Date,
+//- condition: String,
+//- categories: [{category: String}],
+//- availability: [{startDate: Date, endDate: Date}]
+block content
+  h1 Editting Gear
+  form(method='post' action='/items/'+item._id)
+    .row
+      label.col2(for='name') What is it?
+      input#name.col6(type='text' name='name' value=item.name)
+    .row
+      label.col2(for='brand') Brand/Manufacturer
+      input#brand.col6(type='text' name='brand' value=item.brand)
+    .row
+      label.col2(for='datePurchased') Date purchased 
+      input#datePurchased.col6(type='date' name='purchaseDate' value=item.purchaseDate)
+    .row
+      label.col2(for='condition') Condition
+      select#condition.col6(name='condition' value=item.condition)
+        option(value='new') New (Seriously never been used)
+        option(value='likenew') Like New (Light use with no noticable wear)
+        option(value='good') Good (Light wear, no major flaws. Most well kept lightly used gear)
+        option(value='worn') Worn (Used often and used well. Probably some wear and tear that would be expected based on it's age and use)
+        option(value='damaged') Some Damage (Some flaws that may affect usability, like rips in a tent, or broken zipper on a sleeping bag)
+        option(value='old') Near retirement (older gear that has been well loved and used and can still be used, but might only make it a few more trips)
+        option(value='oldnew') Old gear that just never got used much
+    .row
+      label.col2(for='categories') Categories (comma separated)
+      input#category.col6(type='text' name='categories' value=item.categories)
+    .row
+      label.col2(for='availability') Availability
+      label.col2(for='startDate')
+      input#startDate(name='startDate' type='date' value=item.startDate)
+      label.col2(for='endDate')
+      input#endDate(name='endDate' type='date' value=item.endDate)
+    .row
+      input(type='submit' value='Submit')
